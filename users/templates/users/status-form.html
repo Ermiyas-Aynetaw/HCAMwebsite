@@ -1,0 +1,51 @@
+
+{% block content %}
+
+<form action = "" method="POST">
+    {% csrf_token %}
+    {{statusForm.as_p}}
+    <input type = "submit" value="Send" />
+</form>
+
+
+<div>
+    <style>
+      table, th, td {
+        border:1px solid black;
+      }
+      </style>
+
+      <body>                      
+      <table style="width:100%">
+        <tr>
+          <th>Body Temperature(0C)</th>
+          <th>Blood Pressure(mmHg)</th>
+          <th>Heart Rate(BPM)</th>
+          <th>Doctor recommendation</th>
+          <th>Admin doctor recommendation</th>
+          <th>Date and Time</th>
+        </tr>
+        <tr>
+          <td>37</td>
+          <td>100</td>
+          <td>80</td>
+          <td><a href="#" >View</a></td>
+          <td><a href="#" >View</a></td>
+          <td></td>
+
+        </tr>
+        <tr>
+          <td>40</td>
+          <td>90</td>
+          <td>75</td>
+          <td><a href="" >View</a></td>
+          <td><a href="" >View</a></td>
+          <td></td>
+        </tr>
+        
+      </table>          
+      </body>
+
+  </div>
+
+{% endblock %}

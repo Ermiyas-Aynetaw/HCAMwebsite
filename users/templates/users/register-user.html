@@ -1,0 +1,99 @@
+
+{% extends 'main.html' %} 
+
+{% load static %}
+
+{% block content %}
+
+
+{% if page == 'registerDoctor' %}
+<div class="auth">
+    <div class="card">
+        <div class="auth__header text-center">
+        <a href="/">
+            <img src="{% static 'images/icon.svg' %}" alt="icon" />
+        </a>
+        <h3>Account SignUp</h3>
+        <p>Create a new doctor account</p>
+        </div>
+
+        <form class="form auth__form" method="POST", action="{% url 'register-doctor' %}">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div class="form__field">
+            <label for="formInput#text">{{field.label}}</label>
+            {{field}}
+        </div>
+
+        {% endfor %}
+        <div class="auth__actions">
+            <input class="btn btn--sub btn--lg" type="submit" value="Submit" />
+        </div>
+        </form>
+    </div>
+    </div>
+
+
+    {% elif page == 'registerPatient' %}
+    <div class="auth">
+        <div class="card">
+            <div class="auth__header text-center">
+            <a href="/">
+                <img src="{% static 'images/icon.svg' %}" alt="icon" />
+            </a>
+            <h3>Account SignUp</h3>
+            <p>Create a new patient account</p>
+            </div>
+    
+            <form class="form auth__form" method="POST", action="{% url 'register-patient' %}">
+            {% csrf_token %}
+  
+            {% for field in form %}
+            <div class="form__field">
+                <label for="formInput#text">{{field.label}}</label>
+                {{field}}
+            </div>
+
+            {% endfor %}
+            <div class="auth__actions">
+                <input class="btn btn--sub btn--lg" type="submit" value="Submit" />
+            </div>
+            </form>
+        </div>
+        </div>
+
+
+    {% elif page == 'registerCaregiver' %}
+    <div class="auth">
+        <div class="card">
+            <div class="auth__header text-center">
+            <a href="/">
+                <img src="{% static 'images/icon.svg' %}" alt="icon" />
+            </a>
+            <h3>Account SignUp</h3>
+            <p>Create a new caregiver account</p>
+            </div>
+
+            <form class="form auth__form" method="POST", action="{% url 'register-caregiver' %}">
+            {% csrf_token %}
+
+            {% for field in form %}
+            <div class="form__field">
+                <label for="formInput#text">{{field.label}}</label>
+                {{field}}
+            </div>
+
+            {% endfor %}
+            <div class="auth__actions">
+                <input class="btn btn--sub btn--lg" type="submit" value="Submit" />
+            </div>
+            </form>
+        </div>
+        </div>
+
+        {% else %}
+        <h1>please choose your want to register a user! </h1>
+{% endif %}
+
+{% endblock %} 

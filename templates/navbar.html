@@ -1,0 +1,84 @@
+  {% load static %}
+  
+  <style>
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {background-color: #f1f1f1}
+    
+    #dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    </style>
+
+
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container container--narrow">
+      <a href="/" class="header__logo">
+        <img src="" alt="hcam logo" />
+      </a>
+      <nav class="header__nav">
+        <input type="checkbox" id="responsive-menu" />
+        <label for="responsive-menu" class="toggle-menu">
+          <span>Menu</span>
+          <div class="toggle-menu__lines"></div>
+        </label>
+        <ul class="header__menu">
+   
+          <li class="header__menuItem"><a href="{% url 'hcam-main' %}">Home</a></li>
+
+          {% if request.user.is_authenticated %}
+          <li class="header__menuItem"><a href="{% url 'patient-page' %}">Patients</a></li>
+          <li class="header__menuItem"><a href="{% url 'doctor-page' %}">Doctors</a></li>
+          <li class="header__menuItem"><a href="{%  url 'caregiver-page' %}">Caregivers</a></li>
+
+
+          <li id="dropdown" class="header__menuItem">
+            <a class="dropbtn">View Databse</a>  
+            <div class="dropdown-content">
+            <a href="{% url 'doctors' %}">Doctor</a>
+            <a href="{% url 'caregivers' %}">Caregiver</a>
+            <a href="{% url 'patients' %}">Patient</a>
+            </div>
+        </li>
+          
+
+          <li id="dropdown" class="header__menuItem">
+            <a class="dropbtn">Register</a>  
+            <div class="dropdown-content">
+            <a href="{% url 'register' %}">Doctor</a>
+            <a href="{% url 'register' %}">Caregiver</a>
+            <a href="{% url 'register' %}">Patient</a>
+            <a href="{% url 'login' %}">Change Admin</a>
+            </div>
+        </li>
+          <li class="header__menuItem"><a href="{% url 'logout' %}" class="btn btn--sub">Logout</a></li>
+          
+          {% else %}
+          <li class="header__menuItem"><a href="{% url 'login' %}" class="btn btn--sub">Login/Sign Up</a></li>
+          {% endif %}
+        </ul> 
+      </nav>
+    </div>
+
+  </header>
+
+
+
+

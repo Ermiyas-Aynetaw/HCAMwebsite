@@ -1,0 +1,46 @@
+.form-control-dark {
+  border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+  border-color: #c42828;
+  box-shadow: 0 0 0 .25rem rgba(207, 57, 57, 0.25);
+}
+
+.text-small {
+  font-size: 85%;
+  text-decoration-color: white;
+}
+
+.dropdown-toggle:not(:focus) {
+  outline: 0;
+}
+.container{
+  background-color: gray;
+  text-decoration-color: none;
+  color:white;
+  font-family: Arial;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+
+  
+ 
+  }
+
+.col-md-3 text-end{
+  background-color: aqua;
+}
+ul{
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul li{
+  list-style: none;
+  margin-left: 62px;
+  margin-top: 27px;
+  font-size: 14px;
+}
+
+  
+
