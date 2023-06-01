@@ -290,19 +290,3 @@ def patientForm(request):
     context={'form':form}
     return render(request, 'users/patient-form.html', context)
 
-
-
-##################
-
-def editPatientProfile(request):
-    user = User.objects.get(id=request.user.id)
-    patient = user.patient
-    form = PatientForm(instance=patient)
-    if request.method == "POST":
-        form = PatientForm(request.POST, request.FILES, instance=patient)
-        if form.is_valid():
-            form.save()
-        return redirect('patients')
-    
-    context={'form': form}
-    return render(request, 'users/edit-patient-profile.html', context)
