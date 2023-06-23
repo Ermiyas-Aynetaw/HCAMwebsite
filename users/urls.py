@@ -22,9 +22,6 @@ urlpatterns = [
     path('register-patient/', views.registerPatient, name='register-patient'),
     path('register-caregiver/', views.registerCaregiver, name='register-caregiver'),
     
-    # path('doctor-form/', views.doctorForm, name = 'doctor-form'),
-    # path('patient-form/', views.patientForm, name = 'patient-form'),
-    # path('caregiver-form/', views.caregiverForm, name = 'caregiver-form'),
     
     # path('patient-profile-form/', views.patientProfileForm, name = 'patient-profile-form'),
     # path('doctor-profile-form/', views.doctorProfileForm, name = 'doctor-profile-form'),

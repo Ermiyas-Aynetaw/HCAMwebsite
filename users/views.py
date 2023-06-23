@@ -287,5 +287,3 @@ def patientForm(request):
         return redirect('patients')
     context={'form':form}
     return render(request, 'users/patient-form.html', context)
-
-
