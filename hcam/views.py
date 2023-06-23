@@ -2,19 +2,21 @@ from django.shortcuts import render
 # Create your views here.
 from django.contrib.auth.decorators import login_required
 
-from users.models import Patient, Doctor, Caregiver
+from users.models import Patient, Doctor, Caregiver, Hospital
 
 
 
-''''this to show to Yehuala'''
 
 def hcamMain(request):
-    return render(request, 'device.html')
+    hospital = Hospital.objects.get(id = "44a01626-5ce1-42e3-ba97-d82a95d377c3")
+    context = {'hospital': hospital}
+    return render(request, 'device.html', context)
 
 
 def userMain(request):
-    return render(request, 'about.html')
-
+    hospital = Hospital.objects.get(id="44a01626-5ce1-42e3-ba97-d82a95d377c3")
+    context = {'hospital': hospital}
+    return render(request, 'about.html', context)
 
 
 def adminPage(request):   

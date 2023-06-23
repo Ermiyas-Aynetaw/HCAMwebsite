@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hcam.apps.HcamConfig',
     'users.apps.UsersConfig',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [

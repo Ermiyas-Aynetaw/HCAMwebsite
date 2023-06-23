@@ -57,17 +57,8 @@
             <a href="{% url 'patients' %}">Patient</a>
             </div>
         </li>
-          
-
-          <li id="dropdown" class="header__menuItem">
-            <a class="dropbtn">Register</a>  
-            <div class="dropdown-content">
-            <a href="{% url 'register' %}">Doctor</a>
-            <a href="{% url 'register' %}">Caregiver</a>
-            <a href="{% url 'register' %}">Patient</a>
-            <a href="{% url 'login' %}">Change Admin</a>
-            </div>
-        </li>
+        <li class="header__menuItem"><a href="{% url 'register' %}">Register User</a></li>
+     
           <li class="header__menuItem"><a href="{% url 'logout' %}" class="btn btn--sub">Logout</a></li>
           
           {% else %}

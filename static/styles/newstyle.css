@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
+#bg {
+    padding: 0 100px;
+    background-image: url("/static/images/img/amazing.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#welcome {
+    font-size: 20px;
+    font-family: Luccida Calligraphy;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+    margin: 50vh 0;
+    font-style: oblique;
+}
+
+.educon {
+    background-color: white;
+    margin: 0 -120px;
+    padding: 100px 0;
+    border-radius: 0 0 10% 10%;
+}
+
+#edu_head {
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+.eduel {
+    display: flex;
+    flex-direction: row;
+    margin: 100px 120px 100px 200px;
+}
+
+.eduelimg {
+    position: relative;
+    display: inline;
+    width: 40%;
+    height: 45vh;
+    margin-top: 160px;
+}
+
+.eduelimg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.edueltxt {
+    display: inline-block;
+    max-width: 45%;
+    margin-left: 100px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.edueltxt h4 {
+    font-size: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+.edueltxt p {
+    font-size: 25px;
+}
+
+
+
+.childcon {
+    top: 0;
+    left: 10%;
+    width: 90%;
+    position: relative;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#child_head {
+    font-size: 60px;
+    font-family: Informal Roman;
+    color: white;
+    text-align: center;
+}
+
+.childcon .childimg {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.childcon .childimg img {
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    filter: grayscale(80%);
+}
+
+.childcon .childtext {
+    width: 90%;
+    height: fit-content;
+    margin-left: 50px;
+}
+
+.childcon .childtext h4 {
+    font-family: MV Boli;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+.childcon .childtext p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+
+.sm {
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+    display: flex;
+}
+
+.sm .smallsm .sma {
+    color: black;
+    display: inline-block;
+    border-radius: 5%;
+    transform: rotate(-45deg);
+    border: 2px solid white;
+    box-shadow: -7px 7px 20px black;
+    margin: 0 20px;
+    position: relative;
+    padding: 15px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: 1s;
+}
+
+.sm .smallsm .sma .iconn {
+    position: relative;
+    transform: rotate(45deg);
+    z-index: 3;
+    transition: .5s ease-in-out;
+}
+
+.sm .smallsm .sma:hover {
+    box-shadow: 0 0 0 transparent;
+}
+
+.sm .smallsm .sma:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    transition: .5s ease-in-out;
+}
+
+.smallsm:nth-child(1) .sma:before {
+    background-color: #4267B2;
+}
+
+.smallsm:nth-child(1) .sma {
+    padding: 16px 22px 16px 22px;
+}
+
+.smallsm:nth-child(2) .sma:before {
+    background-color: #1DA1F2;
+}
+
+.smallsm:nth-child(3) .sma:before {
+    background-color: #c8232c;
+}
+
+.smallsm:nth-child(4) .sma:before {
+    background-color: #FF0000;
+}
+
+.smallsm .sma:hover:before {
+    top: 0;
+}
+
+.smallsm .sma:hover .iconn {
+    color: white;
+    transform: rotate(45deg);
+}
+.my_name{
+     color: white;
+     font-size: 25px;
+    
+ }

@@ -1,13 +1,114 @@
 {% extends 'main.html' %}
+{% load static %}
 
 {% block content %}
-{% include 'patientnav.html' %} 
+{% include 'usernavbar.html' %} 
 
-<p>
-    What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-</p>
 
+{% comment %} <link rel="stylesheet" type="text/css" href="{% static 'styles/newstyle.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/fontawesome-free-5.11.2-web/css/all.css' %}"> {% endcomment %}
+
+<section class="hero-section text-center">
+    <div class="container container--narrow">
+      <div class="hero-section__box">
+        <h2>CONNECT US VIA HCAM, <span>WE ARE</span></h2>
+        <h2>DEDICATED TO HEALTHCARE !</h2>
+      </div>
+  
+      <div class="hero-section__search">
+        <form class="form" action="#" method="get">
+          <div class="form__field">
+            <label for="formInput#search">Search HCAM Users </label>
+            <input class="input input--text" id="formInput#search" type="text" name="text"
+              placeholder="Search by username" />
+          </div>
+  
+          <input class="btn btn--sub btn--lg" type="submit" value="Search" />
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+<body id="bg" >
+
+    <div class="childcon">
+        <div>
+            <h4 id="edu_head">{{hospital.name}} !</h4>
+        </div>
+        <div class="childimg">
+            <img src="{{hospital.hospital_image.url}}">
+        </div>
+        <div class="childtext">
+            <h4>Historical Background </h4>
+            <p>{{hospital.more_information}}</p>
+        </div>
+    </div>
+
+    <div class="educon">
+        <div>
+            <h4 id="edu_head">OUR SERVICES !</h4>
+        </div>
+
+        {% for service in hospital.service.all %}
+        <div class="eduel">
+            <div class="eduelimg">
+                <img src="{{service.service_image.url}}" class="myim">
+            </div>
+
+            <div class="edueltxt">
+                <h4>{{service.title}}</h4>
+                <p class="first_level">{{service.discription}}</p>
+            </div>
+        </div>
+    {% endfor %} 
+    </div><br><br><br><br><br><br><br><br>
+    
+
+
+    <div class="footercon" id='contact'>
+        <hr style="color: white; ">
+        <div class="sm">
+            <div class="smallsm">
+                <a href="#" class="sma">
+                    <i class="fab fa-facebook-f fa-2x iconn"></i></a>
+            </div>
+            <div class="smallsm">
+                <a href="#" class="sma">
+
+                    <i class="fab fa-twitter fa-2x iconn"></i></a>
+            </div>
+            <div class="smallsm">
+                <a href="#" class="sma">
+
+                    <i class="fab fa-pinterest fa-2x iconn"></i></a>
+            </div>
+            <div class="smallsm">
+                <a href="#" class="sma">
+
+                    <i class="fab fa-youtube  fa-2x iconn"></i></a>
+            </div>
+
+        </div>
+        <br><br>
+
+        <br><br>
+
+        <div class = "cont">
+        <h1 id = "cont">Contact</h1>
+        </div>
+        
+        <i class="far fa-address-book fa-lg" style="color:white;margin-left:50px;"></i><span style="color: white;">{{hospital.location}}</span><br><br>
+        <i class="fas fa-phone fa-lg" style="color:white; transform: rotate(100deg);margin-left:50px;"></i><span style="color: white;">{{hospital.phone_number}}</span><br><br>
+        <i class="fas fa-inbox fa-lg" style="color:white;margin-left:50px;"></i><span style="color: white;">{{hospital.email}}</span><br><br>
+        <i class="fas fa-university fa-lg" style="color: white;margin-left:50px;"></i><a href="https://www.adamahmc.edu.et/"> <span style="color: white;">{{hospital.social_website}}</span></a>
+        <br><br>
+        <p style="text-align: center; color:white">&copy all rights reserved to Ermiyas Aynetaw.<br>WEB PROGRAMMING ASSIGNMENT<br>if you have any comment contact me. <br>THANX FOR WATCHING...</p><br><br><br>
+    </div>
+
+</body>
+
+</html>
 {% endblock %}
+
