@@ -5,6 +5,9 @@ from .models import Patient, Doctor, Caregiver
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 def createUserProfile(sender, instance, created, **kwargs):
     if created:
@@ -15,41 +18,59 @@ def createUserProfile(sender, instance, created, **kwargs):
                 username = user.username,
                 email = user.email,
                 first_name = user.first_name,
-                
-                #middle_name = user.last_name,
-                
-                            
-            )      
-            # doctor = Doctor.objects.create(
-            #     doctor=doctor,           
-            # )   
+                                           
+            )   
+            
+            subject = 'Welcome to our Hospital'
+            message = 'We are glad you are here!'
+               
+            send_mail(
+                subject,
+                message, 
+                settings.EMAIL_HOST_USER,
+                [doctor.email],
+                fail_silently=False
+            )
             
         elif user.type == "PATIENT":
             patient = Patient.objects.create(
                 user = user,
-                username = user.username,  
+                username = user.username, 
+                email = user.email, 
                 first_name = user.first_name,
-                #middle_name = user.last_name,
-                email = user.email,
+
                           
             )      
-            # patient = Patient.objects.create(
-            #     patient=patient,           
-            # )
-        
+            
+            subject = 'Welcome to our Hospital'
+            message = 'We are glad you are here!'
+            send_mail(
+                subject,
+                message,
+                settings.EMAIL_HOST_USER,
+                [patient.email],
+                fail_silently=False
+            )
+            
         else:
             caregiver = Caregiver.objects.create(
                 user = user,
                 username = user.username, 
-                first_name = user.first_name,
                 email = user.email,
-                #middle_name = user.last_name,
+                first_name = user.first_name,
+
+                 
+            )  
                 
-                           
-            )      
-            # caregiver = Caregiver.objects.create(
-            #     caregiver=caregiver,           
-            # )
+            subject = 'Welcome to our Hospital'
+            message = 'We are glad you are here!'    
+            send_mail(
+                subject,
+                message,
+                settings.EMAIL_HOST_USER,
+                [caregiver.email],
+                fail_silently=False
+            )
        
 
 def updateDoctor(sender, instance, created, **kwargs):

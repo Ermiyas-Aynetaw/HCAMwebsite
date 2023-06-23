@@ -6,10 +6,12 @@ from users.models import Patient, Doctor, Caregiver
 
 
 
-
+''''this to show to Yehuala'''
 
 def hcamMain(request):
     return render(request, 'device.html')
+
+
 def userMain(request):
     return render(request, 'about.html')
 

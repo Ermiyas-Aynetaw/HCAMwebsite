@@ -244,7 +244,6 @@ def registerPatient(request):
 # Return to Caregiver
 def registerCaregiver(request):
     page = 'registerCaregiver'
-    
     form = CaregiverForm()
     
     if request.method == "POST":
@@ -257,7 +256,6 @@ def registerCaregiver(request):
                 
     context={'page':page, 'form':form}
     return render(request, 'users/caregiver-form.html', context)
-
 
 
 def doctorForm(request):
