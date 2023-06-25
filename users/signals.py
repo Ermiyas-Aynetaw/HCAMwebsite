@@ -52,18 +52,20 @@ def createUserProfile(sender, instance, created, **kwargs):
                 fail_silently=False
             )
             
+            
         else:
+            user.type == "CAREGIVER"
             caregiver = Caregiver.objects.create(
                 user = user,
                 username = user.username, 
-                email = user.email,
+                email = user.email, 
                 first_name = user.first_name,
 
-                 
-            )  
-                
+                          
+            )      
+            
             subject = 'Welcome to our Hospital'
-            message = 'We are glad you are here!'    
+            message = 'We are glad you are here!'
             send_mail(
                 subject,
                 message,
@@ -71,6 +73,8 @@ def createUserProfile(sender, instance, created, **kwargs):
                 [caregiver.email],
                 fail_silently=False
             )
+            
+
        
 
 def updateDoctor(sender, instance, created, **kwargs):

@@ -1,15 +1,10 @@
 
-
-/* my style Ermiyas */
-
-
 #bg {
   background-image: url("/static/images/img/amazing.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 
 .educon {
   background-color: white;
@@ -206,12 +201,6 @@
 }
 
 /* Ermiyas stop */
-
-
-
-
-
-
 
 
 :root {

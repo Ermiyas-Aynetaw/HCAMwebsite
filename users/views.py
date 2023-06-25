@@ -77,7 +77,7 @@ def deleteDoctorForm(request, pk):
     doctor = Doctor.objects.get(id=pk)
     if request.method == 'POST':
         doctor.delete()
-        return redirect('patients')
+        return redirect('doctors')
     context={'object':doctor}
     return render(request, 'users/delete-doctor.html', context)
 

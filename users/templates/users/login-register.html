@@ -1,10 +1,7 @@
 
 {% extends 'main.html' %} 
-
 {% load static %}
-
 {% block content %}
-
 {% if page == 'registerUser' %}
 <div class="auth">
     <div class="card">
@@ -39,8 +36,6 @@
     </div>
     </div>
 
-
-
 {% else %}
 <div class="auth">
     <div class="card">
@@ -49,7 +44,7 @@
         <img src="{% static 'images/icon.svg' %}" alt="icon" />
         </a>
         <h3>Account Login</h3>
-        <p>Hello Developer, Welcome Back!</p>
+        <p>Hello Users, Welcome Back!</p>
     </div>
 
     <form action="{% url 'login' %}" method="POST" class="form auth__form">
@@ -80,7 +75,7 @@
         </div>
         <div class="auth__actions">
         <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
-        <a href="forgetpassword.html">Forget Password?</a>
+        <a href="{% url 'reset_password' %}">Forget Password?</a>
         </div>
     </form>
     <div class="auth__alternative">

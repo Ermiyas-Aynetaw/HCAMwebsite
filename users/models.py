@@ -64,7 +64,7 @@ class Doctor(models.Model):
     national_id = models.ImageField(null=True, blank=True, default='national.jpg')
     field_title = models.CharField(max_length=150, null=True, blank=True)
     short_intro = models.CharField(max_length=250, null=True, blank=True)
-    profile_image = models.ImageField(null=True, blank=True, default='default-doctor.png')
+    profile_image = models.ImageField(null=True, blank=True, default='default-doctor.jpg')
     biography = models.TextField(null=True, blank=True)
     working_place = models.ForeignKey(Hospital, on_delete=models.CASCADE, null=True, blank=True)
     cv = models.ImageField(null=True, blank=True)

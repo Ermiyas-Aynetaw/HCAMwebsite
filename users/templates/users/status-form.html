@@ -1,6 +1,26 @@
 
 {% block content %}
 
+<h4>Temperature Graph</h4>
+<iframe width="450" height="260" style="border: 1px solid #cccccc;" 
+src="https://thingspeak.com/channels/2201006/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+<h4>Temperature Value</h4>
+<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2201006/widgets/675503"></iframe>
+
+<br>
+
+<h4>Humidity Graph</h4>
+<iframe width="450" height="260" style="border: 1px solid #cccccc;" 
+src="https://thingspeak.com/channels/2201006/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
+<h4>Humidity Value</h4>
+<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2201006/widgets/675501"></iframe>
+
+
+
+
+
+
 <form action = "" method="POST">
     {% csrf_token %}
     {{statusForm.as_p}}
@@ -45,7 +65,8 @@
         
       </table>          
       </body>
-
   </div>
+
+
 
 {% endblock %}
